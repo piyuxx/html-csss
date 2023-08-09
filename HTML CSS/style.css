@@ -1,0 +1,266 @@
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, #ff6bc0, #ffda5d);
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar-toggler {
+  display: block;
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+
+.navbar-toggler > span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: rgb(9, 9, 9);
+  transition: all 0.3s ease;
+}
+
+.call-icon {
+  border: 2px solid black;
+  border-radius: 100%;
+  padding: 2px;
+  font-size: 16px;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 5;
+  min-height: 44px;
+}
+
+.navbar-toggler {
+  flex-basis: 10%;
+}
+
+.navbar-toggler.active-nav > span:first-of-type {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar-toggler.active-nav span:nth-of-type(2) {
+  opacity: 0;
+}
+.navbar-toggler.active-nav span:last-of-type {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.navbar-icons {
+  flex-basis: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.navbar-links {
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  position: fixed;
+  top: 44px;
+  left: -200vw;
+  overflow-x: hidden;
+  bottom: 0;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.navbar.active .navbar-links {
+  left: 0;
+  right: 0;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-link {
+  font-family: "Times New Roman", Times, serif;
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.header {
+  position: relative;
+  top: 14px;
+}
+.box{
+    min-height: 88px;
+    width: 100%;
+}
+.header > img {
+  display: block;
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  object-position: 50% 25%;
+}
+
+.header-content {
+  position: absolute;
+  z-index: 3;
+  top: 26%;
+  left: 10vw;
+  width: calc(100% - 20vw);
+  max-width: 680px;
+  background-color: hwb(0 49% 1% / 0.48);
+  color: rgba(255, 255, 255, 0.899);
+  padding: 1rem;
+}
+.header-content > h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.header-content > p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.product {
+  text-align: center;
+  padding: 1rem;
+}
+.product > h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.product-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.product-item {
+  flex-basis: 300px;
+  margin: 0.5rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  text-align: center;
+  border-radius: 0 4.5rem 0 4.5rem;
+}
+
+.product-item > img {
+  width: 252px;
+  height: 252px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0 3rem 0 0;
+}
+.product-item > h3 {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+.product-item > p {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.order-button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.593);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 1rem 4rem;
+  text-align: center;
+  margin: 1rem auto;
+  border-radius: 5rem;
+}
+
+@media (min-width: 768px) {
+  .header > img {
+    height: 98vh;
+  }
+  .header-content {
+    left: 5rem;
+    padding: 2rem 8rem 2rem 2rem;
+  }
+
+  .header-content > h1 {
+    font-size: 3.8rem;
+  }
+  .header-content > p {
+    font-size: 1.1rem;
+  }
+  .product {
+    padding: 0;
+  }
+
+  .product > h1 {
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
+  .product-items {
+    padding: 1rem;
+  }
+
+  .product-item {
+    margin: 0;
+  }
+  .product-item > h3 {
+    font-size: 1.5rem;
+  }
+
+  .order-button {
+    font-size: 1.3rem;
+    margin: 3rem auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar-toggler {
+    visibility: hidden;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar-links {
+    flex-basis: calc(80% - 2rem);
+    flex-direction: row;
+    position: static;
+    overflow-x: visible;
+    padding: 0;
+  }
+}
+.line{
+    width:100%;
+    height:6px;
+    background-color: white;
+}
